@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aibe so cute 💗</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --pink-main: #ff66b2;
+            --pink-accent: #ffb3d9;
+            --pink-soft: #fff0f7;
+            --pink-deep: #cc6699;
+            --pink-warm: #ff8cc8;
+            --bg-gradient: linear-gradient(135deg, #fff0f7 0%, #ffe6f2 50%, #ffccdd 100%);
+            --text-color: #4a1525;
+            --card-bg: #fffafc;
+            --shadow-pink: 0 20px 40px rgba(204, 0, 102, 0.15);
+            --shadow-pink-lg: 0 25px 50px rgba(204, 0, 102, 0.2);
+            --sidebar-w: 260px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Quicksand', 'Playfair Display', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            position: relative;
+            overflow-x: hidden;
+            animation: bgShift 30s ease-in-out infinite;
+        }
+
+        @keyframes bgShift {
+
+            0%,
+            100% {
+                background: var(--bg-gradient);
+            }
+
+            50% {
+                background: linear-gradient(135deg, #ffe6f2 0%, #fff0f7 50%, #ffccdd 100%);
+            }
+        }
+
+        /* ============ FLOATING HEARTS ============ */
+        .heart-container {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: var(--pink-accent);
+            font-size: 1.5rem;
+            opacity: 0.4;
+            animation: floatUp 15s ease-in-out infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* ============ GIF DECORATIONS ============ */
+        .gif-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gif-decoration {
+            position: absolute;
+            opacity: 0.85;
+            mix-blend-mode: multiply;
+            transition: filter 0.3s, opacity 0.3s;
+        }
+
+        .gif-float {
+            animation: floatGif 20s ease-in-out infinite;
+        }
+
+        .gif-float-slow {
+            animation: floatGif 30s ease-in-out infinite;
+        }
+
+        .gif-float-fast {
+            animation: floatGif 15s ease-in-out infinite;
+        }
+
+        @keyframes floatGif {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(0) rotate(5deg);
+            }
+
+            75% {
+                transform: translateY(20px) rotate(-3deg);
+            }
+        }
+
+        .gif-2 {
+            width: 70px;
+            bottom: 15%;
+            right: 8%;
+        }
+
+        /* ============ SIDEBAR ============ */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: var(--sidebar-w);
+            background: linear-gradient(180deg, rgba(255, 250, 252, 0.92), rgba(255, 230, 242, 0.88));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-right: 2px solid rgba(255, 102, 178, 0.15);
+            box-shadow: 4px 0 30px rgba(204, 0, 102, 0.08);
+            padding: 2rem 1.25rem 1.25rem;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(255, 102, 178, 0.25);
+        }
+
+        .sidebar-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--pink-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        .logo-heart {
+            display: inline-block;
+            animation: heartBeat 1.4s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(255, 102, 178, 0.4));
+        }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            20% {
+                transform: scale(1.2);
+            }
+
+            40% {
+                transform: scale(0.95);
+            }
+
+            60% {
+                transform: scale(1.1);
+            }
+        }
+
+        .sidebar-tagline {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--pink-deep);
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            flex: 1;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.85rem 1rem;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 14px;
+            cursor: pointer;
+            color: var(--text-color);
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-warm));
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: -1;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 102, 178, 0.08);
+            border-color: rgba(255, 102, 178, 0.2);
+            transform: translateX(4px);
+        }
+
+        .nav-item.active {
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 12px 25px rgba(255, 102, 178, 0.35);
+            transform: translateX(2px);
+        }
+
+        .nav-item.active::before {
+            opacity: 1;
+        }
+
+        .nav-icon {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 2px 8px rgba(255, 102, 178, 0.18);
+            position: relative;
+        }
+
+        .nav-icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .nav-icon-img.is-loaded {
+            display: block;
+        }
+
+        .nav-icon-fallback {
+            font-size: 1.05rem;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .nav-item:hover .nav-icon-fallback {
+            transform: scale(1.15) rotate(-6deg);
+        }
+
+        .nav-item:hover .nav-icon-img.is-loaded {
+            transform: scale(1.08);
+        }
+
+        .nav-item.active .nav-icon {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-item i.nav-arrow {
+            font-size: 0.85rem;
+            width: auto;
+        }
+
+        .nav-item .nav-label {
+            flex: 1;
+        }
+
+        .nav-item .nav-arrow {
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: all 0.3s;
+            font-size: 0.85rem;
+        }
+
+        .nav-item.active .nav-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .sidebar-footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--pink-deep);
+            font-style: italic;
+            opacity: 0.7;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(255, 102, 178, 0.25);
+        }
+
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 101;
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-warm));
+            color: white;
+            border: none;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(255, 102, 178, 0.4);
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ============ MAIN CONTENT ============ */
+        .main-content {
+            margin-left: var(--sidebar-w);
+            padding: 2.5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-section {
+            display: none;
+            width: 100%;
+            max-width: 1100px;
+            animation: fadeInScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--pink-main);
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--pink-main), transparent);
+            border-radius: 2px;
+        }
+
+        .section-header .subtitle {
+            margin-top: 1.6rem;
+            font-size: 1.05rem;
+            color: var(--pink-deep);
+            font-style: italic;
+        }
+
+        /* ============ SECTION 1: LETTER ============ */
+        .letter-card {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: var(--shadow-pink), 0 0 0 3px rgba(255, 102, 178, 0.1);
+            padding: 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+        .letter-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 179, 217, 0.15) 0%, transparent 50%);
+            animation: rotateLight 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotateLight {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .letter-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-pink-lg), 0 0 0 4px rgba(255, 102, 178, 0.15);
+        }
+
+        .letter-header {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .letter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--pink-main);
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .letter-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--pink-accent);
+            border-radius: 2px;
+        }
+
+        .letter-date {
+            margin-top: 0.75rem;
+            font-style: italic;
+            color: var(--pink-deep);
+            font-size: 1rem;
+        }
+
+        .letter-body {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.85;
+            font-size: 1.2rem;
+            text-align: left;
+            padding: 0 1rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .letter-body p {
+            margin: 1.5rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSlide 0.8s forwards;
+        }
+
+        .letter-body p:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .letter-body p:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .letter-body p:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .letter-body p:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .letter-body p:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-signature {
+            margin-top: 2.5rem;
+            text-align: right;
+            font-size: 2rem;
+            color: var(--pink-main);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============ ENVELOPE OPEN ANIMATION (GSAP) ============ */
+        .letter-stage {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 360px;
+        }
+
+        .envelope-scene {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1rem 4rem;
+            perspective: 1200px;
+            perspective-origin: 50% 30%;
+        }
+
+        .envelope {
+            position: relative;
+            width: min(380px, 90vw);
+            height: 250px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            outline: none;
+            will-change: transform;
+        }
+
+        .envelope:focus-visible .env-stage {
+            box-shadow: 0 0 0 3px rgba(255, 102, 178, 0.45);
+            border-radius: 10px;
+        }
+
+        .env-stage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        /* soft ground shadow */
+        .env-shadow {
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: -28px;
+            height: 28px;
+            background: radial-gradient(ellipse at center, rgba(180, 0, 80, 0.28) 0%, rgba(180, 0, 80, 0) 70%);
+            filter: blur(4px);
+            transform: translateZ(-10px);
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        /* back panel — the body of envelope */
+        .env-back {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(145deg, #ff8cc8 0%, #ff66b2 55%, #e6458a 100%);
+            border-radius: 10px;
+            box-shadow:
+                0 25px 50px rgba(204, 0, 102, 0.28),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+            transform: translateZ(0);
+        }
+
+        .env-back::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px dashed rgba(255, 255, 255, 0.25);
+            border-radius: 6px;
+            pointer-events: none;
+        }
+
+        /* letter paper inside */
+        .env-letter {
+            position: absolute;
+            left: 6%;
+            right: 6%;
+            top: 7%;
+            bottom: 5%;
+            background:
+                linear-gradient(180deg, #fffafc 0%, #fff5f9 100%);
+            border-radius: 4px;
+            box-shadow:
+                0 2px 6px rgba(0, 0, 0, 0.08),
+                inset 0 0 0 1px rgba(255, 102, 178, 0.08);
+            transform: translateZ(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1.6rem 1.4rem 1rem;
+            overflow: hidden;
+        }
+
+        .env-letter-h {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--pink-main);
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.3px;
+        }
+
+        .env-letter-sub {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--pink-deep);
+            opacity: 0.7;
+            margin-bottom: 0.9rem;
+        }
+
+        .env-letter-lines {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            align-items: center;
+        }
+
+        .env-letter-lines span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(255, 102, 178, 0.15), rgba(255, 102, 178, 0.35), rgba(255, 102, 178, 0.15));
+            border-radius: 999px;
+        }
+
+        .env-letter-lines span:nth-child(2) { width: 92%; }
+        .env-letter-lines span:nth-child(3) { width: 78%; }
+        .env-letter-lines span:nth-child(4) { width: 88%; }
+        .env-letter-lines span:nth-child(5) { width: 60%; }
+
+        .env-letter-heart {
+            margin-top: 0.9rem;
+            font-size: 1.3rem;
+            filter: drop-shadow(0 4px 8px rgba(255, 102, 178, 0.35));
+        }
+
+        /* front pocket — covers lower half of letter */
+        .env-pocket {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 58%;
+            background:
+                linear-gradient(180deg, #ff8cc8 0%, #ff66b2 100%);
+            border-radius: 0 0 10px 10px;
+            transform: translateZ(14px);
+            box-shadow:
+                inset 0 8px 18px rgba(180, 0, 80, 0.25),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+            clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 100%, 0 100%);
+        }
+
+        .env-pocket::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 1px dashed rgba(255, 255, 255, 0.25);
+            border-radius: 0 0 6px 6px;
+            pointer-events: none;
+            clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 100%, 0 100%);
+        }
+
+        /* top flap that opens */
+        .env-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 58%;
+            background:
+                linear-gradient(180deg, #ff99cc 0%, #ff66b2 100%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transform-origin: top center;
+            transform: rotateX(0deg) translateZ(16px);
+            z-index: 5;
+            box-shadow: 0 6px 16px rgba(204, 0, 102, 0.2);
+            will-change: transform;
+        }
+
+        .env-flap::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            pointer-events: none;
+        }
+
+        /* wax seal */
+        .env-seal {
+            position: absolute;
+            top: 32%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(20px);
+            transform-style: preserve-3d;
+            z-index: 6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 30% 28%, #ffa3cd 0%, #e6458a 60%, #b8316d 100%);
+            box-shadow:
+                0 6px 18px rgba(150, 0, 70, 0.4),
+                inset 0 2px 6px rgba(255, 255, 255, 0.35),
+                inset 0 -3px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.55rem;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            will-change: transform, opacity;
+        }
+
+        .env-seal::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 55%, rgba(255, 102, 178, 0.35) 65%, transparent 75%);
+            z-index: -1;
+        }
+
+        .env-seal-icon {
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 1px 2px rgba(120, 0, 60, 0.4));
+        }
+
+        /* postage stamp top-right */
+        .env-stamp {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            width: 56px;
+            height: 64px;
+            background: linear-gradient(160deg, #fffafc, #ffe6f2);
+            border: 2px dashed rgba(255, 102, 178, 0.4);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateZ(2px) rotate(-6deg);
+            box-shadow: 0 4px 10px rgba(204, 0, 102, 0.18);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .env-stamp span {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .env-stamp small {
+            font-size: 0.55rem;
+            color: var(--pink-deep);
+            margin-top: 0.15rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* hint text */
+        .env-hint {
+            position: absolute;
+            bottom: -2.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--pink-deep);
+            font-style: italic;
+            white-space: nowrap;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        .env-hint::before,
+        .env-hint::after {
+            content: '✦';
+            margin: 0 0.5rem;
+            color: var(--pink-main);
+            font-size: 0.7rem;
+            vertical-align: middle;
+        }
+
+        /* burst particles */
+        .burst-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            font-size: 1.5rem;
+            transform: translate(-50%, -50%);
+            filter: drop-shadow(0 4px 8px rgba(255, 102, 178, 0.6));
+            will-change: transform, opacity;
+        }
+
+        /* letter card reveal — controlled by GSAP */
+        .letter-card.letter-reveal {
+            opacity: 0;
+            visibility: hidden;
+            transform-origin: center top;
+            will-change: transform, opacity;
+        }
+
+        .letter-card.letter-reveal.is-ready {
+            visibility: visible;
+        }
+
+        .letter-card.letter-reveal:not(.is-ready):hover {
+            transform: none;
+            box-shadow: var(--shadow-pink), 0 0 0 3px rgba(255, 102, 178, 0.1);
+        }
+
+        .letter-reveal .letter-body p,
+        .letter-reveal .letter-signature,
+        .letter-reveal .letter-header {
+            animation: none !important;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .envelope {
+                height: 215px;
+            }
+
+            .env-seal {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .env-stamp {
+                width: 46px;
+                height: 54px;
+            }
+
+            .env-letter-h {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ============ SECTION 2: PHOTO FRAME ============ */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.2rem;
+            padding: 1.5rem 0.5rem;
+        }
+
+        .photo-grid .game-loading,
+        .photo-grid .game-error {
+            grid-column: 1 / -1;
+        }
+
+        .polaroid {
+            background: #fffdfa;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 15px 35px rgba(204, 0, 102, 0.12), 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .polaroid:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .polaroid:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .polaroid:nth-child(3n) {
+            transform: rotate(-1deg);
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-12px) scale(1.05);
+            box-shadow: 0 30px 55px rgba(204, 0, 102, 0.22), 0 10px 20px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+        }
+
+        .polaroid::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 20px;
+            background: linear-gradient(180deg, rgba(255, 217, 0, 0.55), rgba(255, 217, 0, 0.25));
+            border-radius: 2px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+            z-index: 2;
+        }
+
+        .photo-area {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #ffe6f2, #fff0f7);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: var(--pink-deep);
+            font-weight: 600;
+            gap: 0.5rem;
+            border: 2px dashed rgba(255, 102, 178, 0.3);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .polaroid.has-photo .photo-area {
+            border: none;
+            background: #f5e6ec;
+        }
+
+        .photo-area i {
+            font-size: 2.5rem;
+            opacity: 0.7;
+            transition: transform 0.3s;
+        }
+
+        .polaroid:hover .photo-area i {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .photo-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .polaroid .remove-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-warm));
+            color: white;
+            border: none;
+            font-size: 0.85rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(255, 102, 178, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .polaroid.has-photo:hover .remove-btn {
+            opacity: 1;
+        }
+
+        .polaroid .remove-btn:hover {
+            transform: scale(1.15) rotate(90deg);
+        }
+
+        /* ============ SECTION 3: MEMORY GAME ============ */
+        .game-stats {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-pill {
+            background: rgba(255, 250, 252, 0.92);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 102, 178, 0.2);
+            padding: 0.55rem 1.15rem;
+            border-radius: 999px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            color: var(--pink-deep);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 5px 15px rgba(204, 0, 102, 0.08);
+            font-size: 0.95rem;
+        }
+
+        .stat-pill i {
+            color: var(--pink-main);
+        }
+
+        .stat-pill b {
+            color: var(--pink-main);
+            font-size: 1.05rem;
+            min-width: 1.5em;
+            text-align: center;
+        }
+
+        .btn-cute {
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-warm));
+            color: white;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(255, 102, 178, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-cute:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 102, 178, 0.5);
+        }
+
+        .btn-cute:active {
+            transform: translateY(-1px);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.85rem;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            position: relative;
+            cursor: pointer;
+            perspective: 800px;
+        }
+
+        .card-inner {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .memory-card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            box-shadow: 0 6px 15px rgba(204, 0, 102, 0.15);
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, var(--pink-main) 0%, var(--pink-warm) 50%, var(--pink-accent) 100%);
+            color: white;
+            font-size: 1.6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-front::before {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border: 2px dashed rgba(255, 255, 255, 0.45);
+            border-radius: 10px;
+        }
+
+        .card-front::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            animation: cardShine 3s ease-in-out infinite;
+        }
+
+        @keyframes cardShine {
+
+            0%,
+            100% {
+                transform: translateX(-100%) translateY(-100%);
+            }
+
+            50% {
+                transform: translateX(100%) translateY(100%);
+            }
+        }
+
+        .card-front .card-sparkle {
+            font-size: 1.4rem;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+            animation: cardSparkle 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes cardSparkle {
+
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.95;
+            }
+
+            50% {
+                transform: scale(1.25) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #fffafc, #ffe6f2);
+            transform: rotateY(180deg);
+            font-size: 2.4rem;
+            border: 2px solid rgba(255, 102, 178, 0.3);
+            overflow: hidden;
+        }
+
+        .card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card.matched .card-back img {
+            transform: scale(1.05);
+        }
+
+        .card-back .card-emoji {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .memory-card.matched .card-back {
+            background: linear-gradient(135deg, #fff5cc, #ffe066);
+            border-color: #ffd93d;
+            animation: matchGlow 0.6s ease-out;
+        }
+
+        .game-loading {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--pink-deep);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .game-loading .spinner {
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            border: 4px solid rgba(255, 102, 178, 0.2);
+            border-top-color: var(--pink-main);
+            border-radius: 50%;
+            animation: spin 0.75s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .game-error {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--pink-deep);
+        }
+
+        .game-error .btn-cute {
+            margin-top: 1rem;
+        }
+
+        @keyframes matchGlow {
+            0% {
+                transform: rotateY(180deg) scale(1);
+            }
+
+            50% {
+                transform: rotateY(180deg) scale(1.12);
+                box-shadow: 0 0 30px rgba(255, 217, 0, 0.75);
+            }
+
+            100% {
+                transform: rotateY(180deg) scale(1);
+            }
+        }
+
+        .memory-card:hover:not(.flipped):not(.matched) .card-inner {
+            transform: translateY(-4px) rotateZ(-1.5deg);
+        }
+
+        .memory-card:hover:not(.flipped):not(.matched) .card-face {
+            box-shadow: 0 14px 28px rgba(204, 0, 102, 0.25);
+        }
+
+        .game-board-wrapper {
+            background: rgba(255, 250, 252, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 102, 178, 0.15);
+            box-shadow: 0 20px 45px rgba(204, 0, 102, 0.1);
+        }
+
+        /* Win modal */
+        .game-win {
+            position: fixed;
+            inset: 0;
+            background: rgba(74, 21, 37, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            padding: 1rem;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .game-win.hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .win-card {
+            background: var(--card-bg);
+            padding: 2.5rem 3rem;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(255, 102, 178, 0.25);
+            position: relative;
+            max-width: 420px;
+            width: 100%;
+            animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .win-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--pink-main);
+            margin: 0 0 0.75rem;
+        }
+
+        .win-card p {
+            color: var(--text-color);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .win-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 102, 178, 0.12);
+            color: var(--pink-main);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+        }
+
+        .win-close:hover {
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-warm));
+            color: #fff;
+            transform: rotate(90deg);
+        }
+
+        .win-stats {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .win-stat {
+            color: var(--pink-deep);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .win-stat b {
+            display: block;
+            font-size: 1.6rem;
+            color: var(--pink-main);
+            margin-top: 0.25rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .win-card .win-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--pink-deep);
+            border: 2px solid rgba(255, 102, 178, 0.3);
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 102, 178, 0.1);
+            border-color: var(--pink-main);
+            color: var(--pink-main);
+        }
+
+        /* Confetti */
+        #confetti {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 199;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            top: -10vh;
+            width: 10px;
+            height: 14px;
+            border-radius: 2px;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(115vh) rotate(720deg);
+                opacity: 0.3;
+            }
+        }
+
+        /* Sparkle on card-front (random sparkles) */
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--pink-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 6px var(--pink-accent);
+            animation: sparkle 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 960px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-toggle {
+                display: inline-flex;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 5rem 1.25rem 2rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.4rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.3rem;
+            }
+
+            .letter-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .letter-header h1 {
+                font-size: 2.4rem;
+            }
+
+            .letter-body {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .game-grid {
+                gap: 0.4rem;
+            }
+
+            .card-back {
+                font-size: 1.5rem;
+            }
+
+            .card-front .card-sparkle {
+                font-size: 1.1rem;
+            }
+
+            .game-stats {
+                gap: 0.5rem;
+            }
+
+            .stat-pill {
+                padding: 0.4rem 0.85rem;
+                font-size: 0.8rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+
+            .win-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .win-card h3 {
+                font-size: 1.7rem;
+            }
+
+            .gif-2 {
+                width: 50px;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--pink-soft);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--pink-main), var(--pink-warm));
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating background -->
+    <div class="heart-container"></div>
+
+    <div class="gif-container">
+        <img src="img/cabin-fever.gif" class="gif-decoration gif-2 gif-float-slow" alt="" />
+    </div>
+
+    <!-- Mobile sidebar toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Mở menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1 class="sidebar-logo">
+                <span class="logo-heart">💗</span>
+                <!-- //làm thẻ span này rộng ra chút để chữ có thể hiện hết -->
+                <span class="logo-text">aibe so cute</span>
+            </h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <button class="nav-item active" data-section="letter">
+                <span class="nav-icon">
+                    <i class="fa-solid fa-envelope-open-text nav-icon-fallback"></i>
+                    <img class="nav-icon-img" alt="" />
+                </span>
+                <span class="nav-label">iuuu aibe</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </button>
+            <button class="nav-item" data-section="frame">
+                <span class="nav-icon">
+                    <i class="fa-solid fa-images nav-icon-fallback"></i>
+                    <img class="nav-icon-img" alt="" />
+                </span>
+                <span class="nav-label">aibe so pretty</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </button>
+            <button class="nav-item" data-section="game">
+                <span class="nav-icon">
+                    <i class="fa-solid fa-puzzle-piece nav-icon-fallback"></i>
+                    <img class="nav-icon-img" alt="" />
+                </span>
+                <span class="nav-label">aibe stickers</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">made with 💕 by nhóc húi</div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Section 1: Letter -->
+        <section class="content-section active" id="section-letter">
+            <div class="letter-stage">
+                <div class="envelope-scene" id="envelopeScene">
+                    <button type="button" class="envelope" id="envelopeBtn" aria-label="Mở thư">
+                        <div class="env-stage" id="envStage">
+                            <div class="env-shadow" id="envShadow"></div>
+                            <div class="env-back">
+                                <div class="env-stamp">
+                                    <span>💗</span>
+                                    <small>aibe</small>
+                                </div>
+                            </div>
+                            <div class="env-letter" id="envLetter">
+                                <div class="env-letter-h">iuuu aibe</div>
+                                <div class="env-letter-sub">— from nhóc húi —</div>
+                                <div class="env-letter-lines">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
+                                <div class="env-letter-heart">💗</div>
+                            </div>
+                            <div class="env-pocket"></div>
+                            <div class="env-flap" id="envFlap"></div>
+                            <div class="env-seal" id="envSeal">
+                                <span class="env-seal-icon">💗</span>
+                            </div>
+                        </div>
+                        <p class="env-hint" id="envHint">nhấn vào để mở thư ✨</p>
+                    </button>
+                </div>
+
+                <div class="letter-card letter-reveal" id="letterReveal">
+                    <div class="letter-header">
+                        <h1>iuuu aibe</h1>
+                        <div class="letter-date">a love letter, forever</div>
+                    </div>
+
+                    <div class="letter-body">
+                        <p>Dear aibe,</p>
+                        <p>Anh chào aibe</p>
+                        <p>I love the way your eyes light up when you're excited about something, the sound of your laugh
+                            that fills the room with warmth, and how you seem to understand my thoughts even before I speak
+                            them. You're not just someone I care about — you're my favorite person in the whole world.</p>
+                        <p>Being with you feels like coming home after a long journey. You bring peace to my chaos, joy to
+                            my sorrows, and meaning to my days. I cherish every conversation we share, every smile we
+                            exchange, and every moment we spend together.</p>
+                        <p>Please know that my feelings for you are deep, genuine, and ever-growing. I love you more than
+                            words can fully express, and I'm grateful for every single moment we get to share.</p>
+                    </div>
+
+                    <div class="letter-signature">nhóc húi</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Photo Frame -->
+        <section class="content-section" id="section-frame">
+            <div class="section-header">
+                <h2>lovin aibe 24/7</h2>
+                <div class="subtitle">memories department</div>
+            </div>
+
+            <div class="photo-grid" id="photoGrid">
+                <!-- Polaroids generated by JS -->
+            </div>
+        </section>
+
+        <!-- Section 3: Memory Game -->
+        <section class="content-section" id="section-game">
+            <div class="section-header">
+                <h2>fun fun fun</h2>
+                <div class="subtitle">piu piu~~</div>
+            </div>
+
+            <div class="game-stats">
+                <button class="btn-cute" id="restartGame">
+                    <i class="fa-solid fa-rotate"></i>
+                    Chơi lại
+                </button>
+            </div>
+
+            <div class="game-board-wrapper">
+                <div class="game-grid" id="gameGrid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Win modal -->
+    <div class="game-win hidden" id="gameWin">
+        <div class="win-card">
+            <button type="button" class="win-close" id="closeWin" aria-label="Hì hì">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3>Yayy💖</h3>
+            <p>aibe so smart! so pretty! so cute! so funny! so sweet! so kind! so everything! so sexy! so everything! I love you so much! 💗</p>
+            <div class="win-actions">
+                <button type="button" class="btn-ghost" id="closeWinBtn">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confetti"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        $(function () {
+            // ============ FLOATING HEARTS ============
+            function createHearts() {
+                const $container = $('.heart-container');
+                $container.empty();
+                const heartCount = 20;
+                for (let i = 0; i < heartCount; i++) {
+                    const $heart = $('<span class="heart">❤️</span>');
+                    $heart.css({
+                        'font-size': (Math.random() * 20 + 12) + 'px',
+                        'top': (Math.random() * 100) + '%',
+                        'left': (Math.random() * 100) + '%',
+                        'animation-duration': (Math.random() * 10 + 15) + 's',
+                        'animation-delay': (Math.random() * 5) + 's'
+                    });
+                    $container.append($heart);
+                }
+            }
+            createHearts();
+            setInterval(createHearts, 15000);
+
+            // ============ SIDEBAR NAVIGATION ============
+            $('.nav-item').on('click', function () {
+                const target = $(this).data('section');
+                $('.nav-item').removeClass('active');
+                $(this).addClass('active');
+                $('.content-section').removeClass('active');
+                $('#section-' + target).addClass('active');
+                $('#sidebar').removeClass('open');
+                $(window).scrollTop(0);
+                if (target === 'letter' && typeof enterLetterSection === 'function') {
+                    enterLetterSection();
+                }
+            });
+
+            $('#sidebarToggle').on('click', function () {
+                $('#sidebar').toggleClass('open');
+            });
+
+            $(document).on('click', function (e) {
+                if ($(window).width() <= 960 && $('#sidebar').hasClass('open')) {
+                    if (!$(e.target).closest('#sidebar, #sidebarToggle').length) {
+                        $('#sidebar').removeClass('open');
+                    }
+                }
+            });
+
+            // ============ ENVELOPE OPEN (GSAP) ============
+            const hasGsap = typeof gsap !== 'undefined';
+            let letterOpening = false;
+            let idleFloatTween = null;
+            let shadowFloatTween = null;
+            let envelopeTl = null;
+
+            function startIdleFloat() {
+                if (!hasGsap) return;
+                idleFloatTween = gsap.to('#envelopeBtn', {
+                    y: -12,
+                    duration: 2.4,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut'
+                });
+                shadowFloatTween = gsap.to('#envShadow', {
+                    scaleX: 0.78,
+                    opacity: 0.55,
+                    duration: 2.4,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut',
+                    transformOrigin: '50% 50%'
+                });
+                gsap.to('#envHint', {
+                    opacity: 0.55,
+                    duration: 1.4,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut'
+                });
+            }
+
+            function stopIdleFloat() {
+                if (idleFloatTween) { idleFloatTween.kill(); idleFloatTween = null; }
+                if (shadowFloatTween) { shadowFloatTween.kill(); shadowFloatTween = null; }
+                if (hasGsap) gsap.killTweensOf('#envHint');
+            }
+
+            // 3D mouse tilt
+            const envBtnEl = document.getElementById('envelopeBtn');
+            if (envBtnEl && hasGsap) {
+                let tiltActive = false;
+                envBtnEl.addEventListener('mousemove', function (e) {
+                    if (letterOpening) return;
+                    tiltActive = true;
+                    const rect = envBtnEl.getBoundingClientRect();
+                    const px = (e.clientX - rect.left) / rect.width - 0.5;
+                    const py = (e.clientY - rect.top) / rect.height - 0.5;
+                    gsap.to('#envStage', {
+                        rotationY: px * 18,
+                        rotationX: -py * 14,
+                        duration: 0.5,
+                        ease: 'power2.out',
+                        transformPerspective: 1000,
+                        transformOrigin: '50% 50%'
+                    });
+                });
+                envBtnEl.addEventListener('mouseleave', function () {
+                    if (letterOpening || !tiltActive) return;
+                    tiltActive = false;
+                    gsap.to('#envStage', {
+                        rotationY: 0,
+                        rotationX: 0,
+                        duration: 0.7,
+                        ease: 'power3.out'
+                    });
+                });
+            }
+
+            function emitHearts(originEl, count) {
+                if (!originEl || !hasGsap) return;
+                const rect = originEl.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const icons = ['💗', '💕', '💖', '✨', '🌸'];
+                for (let i = 0; i < count; i++) {
+                    const h = document.createElement('span');
+                    h.className = 'burst-heart';
+                    h.textContent = icons[i % icons.length];
+                    h.style.left = cx + 'px';
+                    h.style.top = cy + 'px';
+                    h.style.fontSize = (0.9 + Math.random() * 1.1) + 'rem';
+                    document.body.appendChild(h);
+                    const angle = (Math.PI * 2 * i / count) + (Math.random() - 0.5) * 0.6;
+                    const dist = 90 + Math.random() * 90;
+                    gsap.to(h, {
+                        x: Math.cos(angle) * dist,
+                        y: Math.sin(angle) * dist - 30,
+                        opacity: 0,
+                        scale: 0.3 + Math.random() * 0.8,
+                        rotation: (Math.random() - 0.5) * 360,
+                        duration: 1.1 + Math.random() * 0.7,
+                        ease: 'power2.out',
+                        onComplete: function () { h.remove(); }
+                    });
+                }
+            }
+
+            function resetEnvelope() {
+                stopIdleFloat();
+                if (envelopeTl) {
+                    envelopeTl.kill();
+                    envelopeTl = null;
+                }
+                if (hasGsap) {
+                    gsap.killTweensOf('#envelopeBtn, #envelopeScene, #envStage, #envFlap, #envSeal, #envLetter, #envHint, #envShadow, #letterReveal');
+                    gsap.killTweensOf('#letterReveal .letter-header, #letterReveal .letter-body p, #letterReveal .letter-signature');
+                    gsap.set('#envelopeScene', { display: 'flex', opacity: 1, scale: 1, y: 0, clearProps: 'filter' });
+                    gsap.set('#envelopeBtn', { y: 0, clearProps: 'filter' });
+                    gsap.set('#envStage', { rotationX: 0, rotationY: 0, clearProps: 'filter' });
+                    gsap.set('#envFlap', { rotationX: 0 });
+                    gsap.set('#envSeal', { xPercent: -50, yPercent: -50, z: 20, scale: 1, rotation: 0, y: 0, opacity: 1 });
+                    gsap.set('#envLetter', { y: 0, rotation: 0, scale: 1, opacity: 1 });
+                    gsap.set('#envHint', { opacity: 1, y: 0 });
+                    gsap.set('#envShadow', { scaleX: 1, opacity: 1, transformOrigin: '50% 50%' });
+                    gsap.set('#letterReveal', { opacity: 0, y: 0, scale: 1, rotationX: 0, visibility: 'hidden' });
+                } else {
+                    $('#envelopeScene').show();
+                    $('#letterReveal').css({ opacity: 0, visibility: 'hidden' });
+                }
+                letterOpening = false;
+                $('#envelopeBtn').prop('disabled', false);
+                $('#letterReveal').removeClass('is-ready');
+            }
+
+            function enterLetterSection() {
+                resetEnvelope();
+                startIdleFloat();
+                setTimeout(function () {
+                    openEnvelope();
+                }, 380);
+            }
+
+            function openEnvelope() {
+                if (letterOpening) return;
+                letterOpening = true;
+                $('#envelopeBtn').prop('disabled', true);
+                stopIdleFloat();
+
+                if (!hasGsap) {
+                    $('#envelopeScene').hide();
+                    $('#letterReveal').addClass('is-ready').css({ opacity: 1, visibility: 'visible' });
+                    return;
+                }
+
+                gsap.set('#letterReveal', { opacity: 0, y: 70, scale: 0.92, rotationX: -12, visibility: 'hidden' });
+                $('#letterReveal').addClass('is-ready');
+
+                const sealEl = document.getElementById('envSeal');
+
+                envelopeTl = gsap.timeline({
+                    defaults: { ease: 'power3.out' }
+                });
+                const tl = envelopeTl;
+
+                tl.to('#envHint', { opacity: 0, y: 12, duration: 0.3, ease: 'power2.in' })
+                    .to('#envStage', { rotationY: 0, rotationX: 0, duration: 0.4, ease: 'power2.out' }, '<')
+                    .to('#envSeal', {
+                        scale: 1.18,
+                        duration: 0.22,
+                        ease: 'power2.out'
+                    })
+                    .add(function () { emitHearts(sealEl, 16); })
+                    .to('#envSeal', {
+                        scale: 0,
+                        rotation: -180,
+                        y: 70,
+                        opacity: 0,
+                        duration: 0.55,
+                        ease: 'back.in(2)'
+                    })
+                    .to('#envFlap', {
+                        rotationX: 178,
+                        duration: 0.95,
+                        ease: 'power2.inOut'
+                    }, '-=0.45')
+                    .to('#envLetter', {
+                        y: '-12%',
+                        duration: 0.55,
+                        ease: 'power2.out'
+                    }, '-=0.55')
+                    .to('#envLetter', {
+                        y: '-95%',
+                        rotation: 1.5,
+                        duration: 0.85,
+                        ease: 'power3.out'
+                    })
+                    .to('#envLetter', {
+                        scale: 1.08,
+                        opacity: 0,
+                        duration: 0.45,
+                        ease: 'power2.in'
+                    }, '-=0.2')
+                    .to('#envelopeScene', {
+                        scale: 0.78,
+                        y: -50,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: 'power2.inOut'
+                    }, '-=0.55')
+                    .set('#envelopeScene', { display: 'none' })
+                    .set('#letterReveal', { visibility: 'visible' })
+                    .to('#letterReveal', {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        rotationX: 0,
+                        duration: 1.1,
+                        ease: 'elastic.out(1, 0.75)'
+                    }, '-=0.35')
+                    .from('#letterReveal .letter-header', {
+                        opacity: 0,
+                        y: 24,
+                        duration: 0.55,
+                        ease: 'power2.out'
+                    }, '-=0.7')
+                    .from('#letterReveal .letter-body p', {
+                        opacity: 0,
+                        y: 24,
+                        duration: 0.55,
+                        stagger: 0.12,
+                        ease: 'power2.out'
+                    }, '-=0.4')
+                    .from('#letterReveal .letter-signature', {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.55,
+                        ease: 'back.out(1.6)'
+                    }, '-=0.2');
+            }
+
+            $('#envelopeBtn').on('click', openEnvelope);
+
+            resetEnvelope();
+            startIdleFloat();
+
+            // ============ PHOTO FRAME ============
+            function showPrettyPhotosLoading() {
+                $('#photoGrid').html(
+                    '<div class="game-loading"><div class="spinner"></div><br>Đang tải ảnh aibe so pretty... 🌸</div>'
+                );
+            }
+
+            function renderPolaroids(photos) {
+                const $grid = $('#photoGrid');
+                $grid.empty();
+                if (!photos || !photos.length) {
+                    $grid.html('<div class="game-error"><p>Chưa có ảnh trong folder aibesopretty nè 💗</p></div>');
+                    return;
+                }
+
+                photos.forEach(function (photo, idx) {
+                    const imgUrl = photo.urlFrame || photo.urlFull || photo.url;
+                    const $card = $(`
+                        <div class="polaroid has-photo" data-slot="${idx + 1}">
+                            <div class="photo-area">
+                                <img src="${imgUrl}" alt="aibe so pretty ${idx + 1}" loading="lazy">
+                            </div>
+                        </div>
+                    `);
+                    $grid.append($card);
+                });
+            }
+            showPrettyPhotosLoading();
+
+            // ============ MEMORY GAME ============
+            const FALLBACK_EMOJIS = ['🧸', '🍓', '🌸', '🦋', '💕', '🌷', '🐰', '🍰', '🍭', '✨', '🌙', '⭐', '🎀', '🦄', '🍒', '🍪', '🐻', '🍦'];
+            let stickerImages = [];
+            let PAIR_COUNT = 18;
+            let useImages = false;
+            let flippedCards = [];
+            let matchedCount = 0;
+            let moves = 0;
+            let gameTimer = null;
+            let gameSeconds = 0;
+            let gameStarted = false;
+            let lock = false;
+
+            function shuffle(arr) {
+                const a = arr.slice();
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            function formatTime(s) {
+                const m = String(Math.floor(s / 60)).padStart(2, '0');
+                const sec = String(s % 60).padStart(2, '0');
+                return m + ':' + sec;
+            }
+
+            function startTimer() {
+                if (gameStarted) return;
+                gameStarted = true;
+                gameTimer = setInterval(function () {
+                    gameSeconds++;
+                    $('#timer').text(formatTime(gameSeconds));
+                }, 1000);
+            }
+
+            function updatePairCountUI() {
+                $('#totalPairs').text(PAIR_COUNT);
+                $('#totalPairsStats').text(PAIR_COUNT);
+            }
+
+            function adjustGrid() {
+                const total = PAIR_COUNT * 2;
+                let cols = 6;
+                if (total <= 8) cols = 4;
+                else if (total <= 16) cols = 4;
+                else if (total <= 24) cols = 6;
+                else if (total <= 36) cols = 6;
+                else cols = 8;
+                document.getElementById('gameGrid').style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+            }
+
+            function buildBoard() {
+                const $grid = $('#gameGrid');
+                $grid.empty();
+
+                let items;
+                if (useImages && stickerImages.length > 0) {
+                    items = stickerImages.slice(0, PAIR_COUNT);
+                } else {
+                    items = FALLBACK_EMOJIS.slice(0, PAIR_COUNT);
+                }
+
+                const cards = shuffle([...items, ...items]);
+                adjustGrid();
+
+                cards.forEach(function (item, idx) {
+                    const cardId = useImages ? item.id : item;
+                    let backContent;
+                    if (useImages) {
+                        backContent = '<img src="' + item.url + '" alt="sticker" loading="lazy">';
+                    } else {
+                        backContent = '<span class="card-emoji">' + item + '</span>';
+                    }
+
+                    const $card = $(`
+                        <div class="memory-card" data-card-id="${cardId}">
+                            <div class="card-inner">
+                                <div class="card-face card-front">
+                                    <span class="card-sparkle">✦</span>
+                                </div>
+                                <div class="card-face card-back">${backContent}</div>
+                            </div>
+                        </div>
+                    `);
+                    $grid.append($card);
+                });
+            }
+
+            function resetGame() {
+                if (gameTimer) clearInterval(gameTimer);
+                flippedCards = [];
+                matchedCount = 0;
+                moves = 0;
+                gameSeconds = 0;
+                gameStarted = false;
+                lock = false;
+                $('#moves').text(0);
+                $('#pairs').text('0');
+                $('#timer').text('00:00');
+                $('#gameWin').addClass('hidden');
+                $('#confetti').empty();
+                updatePairCountUI();
+                buildBoard();
+            }
+
+            $(document).on('click', '.memory-card', function () {
+                if (lock) return;
+                const $card = $(this);
+                if ($card.hasClass('flipped') || $card.hasClass('matched')) return;
+                if (flippedCards.length >= 2) return;
+
+                startTimer();
+                $card.addClass('flipped');
+                flippedCards.push($card);
+
+                if (flippedCards.length === 2) {
+                    moves++;
+                    $('#moves').text(moves);
+                    const [$a, $b] = flippedCards;
+                    if ($a.data('card-id') === $b.data('card-id')) {
+                        lock = true;
+                        setTimeout(function () {
+                            $a.addClass('matched');
+                            $b.addClass('matched');
+                            matchedCount++;
+                            $('#pairs').text(matchedCount);
+                            flippedCards = [];
+                            lock = false;
+                            if (matchedCount === PAIR_COUNT) {
+                                clearInterval(gameTimer);
+                                showWin();
+                            }
+                        }, 450);
+                    } else {
+                        lock = true;
+                        setTimeout(function () {
+                            $a.removeClass('flipped');
+                            $b.removeClass('flipped');
+                            flippedCards = [];
+                            lock = false;
+                        }, 900);
+                    }
+                }
+            });
+
+            function showWin() {
+                $('#winMoves').text(moves);
+                $('#winTime').text(formatTime(gameSeconds));
+                $('#gameWin').removeClass('hidden');
+                createConfetti();
+            }
+
+            function createConfetti() {
+                const $c = $('#confetti').empty();
+                const colors = ['#ff66b2', '#ffb3d9', '#ff8cc8', '#ffe066', '#cc6699', '#fff0f7'];
+                for (let i = 0; i < 70; i++) {
+                    const $p = $('<div class="confetti-piece"></div>');
+                    $p.css({
+                        left: (Math.random() * 100) + '%',
+                        background: colors[Math.floor(Math.random() * colors.length)],
+                        animationDelay: (Math.random() * 0.6) + 's',
+                        animationDuration: (Math.random() * 2 + 2.2) + 's',
+                        transform: 'rotate(' + (Math.random() * 360) + 'deg)',
+                        opacity: 0.6 + Math.random() * 0.4
+                    });
+                    $c.append($p);
+                }
+                setTimeout(function () { $c.empty(); }, 5000);
+            }
+
+            function showGameLoading() {
+                $('#gameGrid').html(
+                    '<div class="game-loading"><div class="spinner"></div><br>Đang tải stickers từ Cloudinary... 🌸</div>'
+                );
+            }
+
+            function showGameError(msg) {
+                $('#gameGrid').html(
+                    '<div class="game-error">' +
+                    '<p>😢 ' + msg + '</p>' +
+                    '<button class="btn-cute" id="retryStickers"><i class="fa-solid fa-rotate"></i> Thử lại</button>' +
+                    '<p style="margin-top:0.8rem;font-size:0.85rem;opacity:0.7">Sẽ dùng emoji fallback</p>' +
+                    '</div>'
+                );
+            }
+
+            function applySidebarIcons(mochamilkList) {
+                const sections = ['letter', 'frame', 'game'];
+                sections.forEach(function (section, i) {
+                    const item = mochamilkList[i];
+                    const $btn = $('.nav-item[data-section="' + section + '"]');
+                    const $img = $btn.find('.nav-icon-img');
+                    const $fallback = $btn.find('.nav-icon-fallback');
+                    if (!item || !item.urlIcon) {
+                        $img.removeClass('is-loaded').hide();
+                        $fallback.show();
+                        return;
+                    }
+                    $img.off('load error').on('load', function () {
+                        $(this).addClass('is-loaded').show();
+                        $fallback.hide();
+                    }).on('error', function () {
+                        $(this).removeClass('is-loaded').hide();
+                        $fallback.show();
+                    });
+                    $img.attr({ src: item.urlIcon, alt: 'mochamilk ' + (i + 1) });
+                    if ($img[0].complete && $img[0].naturalWidth) {
+                        $img.addClass('is-loaded').show();
+                        $fallback.hide();
+                    }
+                });
+            }
+
+            async function loadCloudinaryAssets() {
+                showGameLoading();
+                try {
+                    const res = await fetch('/api/stickers');
+                    const data = await res.json();
+                    if (!data.success) throw new Error(data.error || 'API lỗi');
+
+                    if (data.categories && data.categories.mochamilk) {
+                        applySidebarIcons(data.categories.mochamilk);
+                    }
+
+                    if (data.categories && data.categories.aibesopretty) {
+                        renderPolaroids(data.categories.aibesopretty);
+                    } else {
+                        renderPolaroids([]);
+                    }
+
+                    const gameImages = data.categories
+                        ? [...(data.categories.aibe_stickers || []), ...(data.categories.mochamilk || [])]
+                        : (data.images || []);
+
+                    if (gameImages.length >= 2) {
+                        stickerImages = gameImages;
+                        PAIR_COUNT = Math.min(stickerImages.length, 18);
+                        useImages = true;
+                        updatePairCountUI();
+                        buildBoard();
+                        preloadImages(stickerImages.slice(0, PAIR_COUNT));
+                    } else {
+                        throw new Error('Không có ảnh trong folder');
+                    }
+                } catch (err) {
+                    console.warn('Cloudinary fallback:', err.message);
+                    renderPolaroids([]);
+                    useImages = false;
+                    PAIR_COUNT = FALLBACK_EMOJIS.length;
+                    resetGame();
+                }
+            }
+
+            function preloadImages(images) {
+                images.forEach(function (img) {
+                    const i = new Image();
+                    i.src = img.url;
+                });
+            }
+
+            $(document).on('click', '#retryStickers', loadCloudinaryAssets);
+            $('#restartGame, #playAgain').on('click', resetGame);
+            $('#closeWin, #closeWinBtn').on('click', function () { $('#gameWin').addClass('hidden'); });
+            $('#gameWin').on('click', function (e) {
+                if (e.target === this) $('#gameWin').addClass('hidden');
+            });
+
+            loadCloudinaryAssets();
+        });
+    </script>
+</body>
+
+</html>
