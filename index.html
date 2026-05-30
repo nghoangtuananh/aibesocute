@@ -1865,8 +1865,8 @@
             </button>
             <button class="nav-item" data-section="forever">
                 <span class="nav-icon">
-                    <i class="fa-solid fa-infinity nav-icon-fallback"></i>
-                    <img class="nav-icon-img" alt="" />
+                    <i class="fa-solid fa-infinity nav-icon-fallback" style="display: none;"></i>
+                    <img class="nav-icon-img is-loaded" src="img/milk-and-mocha.gif" alt="aibe forever" />
                 </span>
                 <span class="nav-label">aibe forever</span>
                 <i class="fa-solid fa-chevron-right nav-arrow"></i>
@@ -2534,7 +2534,7 @@
             }
 
             function applySidebarIcons(mochamilkList) {
-                const sections = ['letter', 'frame', 'game', 'forever'];
+                const sections = ['letter', 'frame', 'game'];
                 sections.forEach(function (section, i) {
                     const item = mochamilkList[i];
                     const $btn = $('.nav-item[data-section="' + section + '"]');
